@@ -12,7 +12,7 @@ public class ChainValidator2 {
 	public static void main(String[] args) {
 
 		Scanner scan = new Scanner(System.in);
-		String regex = "[0-9]{2}"; // aceita somente caracteres numéricos [0-9] e não aceita espaços em branco
+		String regex = "[0-9]+"; // aceita somente caracteres numéricos [0-9] e não aceita espaços em branco
 		Pattern padrao = Pattern.compile(regex);
 		String[] nomes = new String[5];
 		for (int i = 0; i < nomes.length; i++) {
@@ -28,7 +28,7 @@ public class ChainValidator2 {
 
 		for (String string : letras) {
 			Matcher matcher = padrao.matcher(string);
-			if (matcher.matches() == true) {
+			if (matcher.matches() == true && string.length() < 3) {
 				System.out.println(string);
 			} else {
 				System.out.println("false");
